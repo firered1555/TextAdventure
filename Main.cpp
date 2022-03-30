@@ -1,3 +1,6 @@
+//Author: Daniel Saviet
+//Date: 10/8/2016
+
 #include <iostream> 
 #include <vector> 
 #include <string>
@@ -7,6 +10,7 @@
 #include <ctime>
 using namespace std;
 
+//function declarations
 void Dialogue1(string &name);
 void playername();
 void gameover();
@@ -18,6 +22,9 @@ void dialoguesword2(string &name);
 void RATFIGHT(string &name, double &h, int &d);
 void drank(bool &ddrank, string &name);
 void prank(bool &vdrank, string &name);
+
+
+//main
 int main()
 {
 	string name;
@@ -25,6 +32,8 @@ int main()
 	playername();
 	system("pause");
 }
+
+//gets input for player name
 void playername()
 {
 
@@ -35,6 +44,8 @@ void playername()
 	Dialogue1(name);
 
 }
+
+//Outputs the first set of dialogue
 void Dialogue1(string &name)
 {
 
@@ -64,6 +75,8 @@ void Dialogue1(string &name)
 		break;
 	}
 }
+
+//Outputs the second set of dialogue and takes choice
 void dialogue2(string &name)
 {
 	srand(time(0));
@@ -117,7 +130,7 @@ void dialogue2(string &name)
 
 
 }
-
+//outputs dialogue when player chooses sword
 void dialoguesword(string &name)
 {
 	cout << "the rat is closing in!" << endl;
@@ -137,6 +150,8 @@ void dialoguesword(string &name)
 
 	dialoguesword2(name);
 }
+
+//ouputs dialogue for strength potion
 void drank(bool &ddrank, string &name)
 {
 	if (ddrank == true)
@@ -148,6 +163,7 @@ void drank(bool &ddrank, string &name)
 		system("pause");
 	}
 }
+//outputs dialogue for health potion
 void prank(bool &vdrank, string &name)
 {
 	if (vdrank == true)
@@ -158,6 +174,8 @@ void prank(bool &vdrank, string &name)
 		system("pause");
 	}
 }
+
+//outputs second set of dialogue once sword is chosen
 void dialoguesword2(string &name)
 {
 	int lol;
@@ -214,7 +232,7 @@ void dialoguesword2(string &name)
 		system("pause");
 	}
 }
-
+//handles boss fight
 void RATFIGHT(string &name, double &h, int &d) //passed variables
 {
 	int rh;
@@ -363,7 +381,7 @@ void RATFIGHT(string &name, double &h, int &d) //passed variables
 
 
 }
-
+//handle dialogue when shield is chosen
 void dialogueshield(string &name)
 {
 	int d;
@@ -582,6 +600,7 @@ void dialogueshield(string &name)
 		}
 	} while (d != 5 && life != 0);
 }
+//ouputs game over
 void gameover()
 {
 	cout << "YOU DIED" << endl;
@@ -591,7 +610,7 @@ void gameover()
 }
 
 
-
+//outputs victory screen
 void win()
 {
 	cout << "YOU WIN" << endl;
